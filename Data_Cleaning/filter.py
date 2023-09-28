@@ -1,7 +1,7 @@
 import json
 
 
-file = open('input_data.txt','r')
+file = open('perfect_100_data.txt','r')
 line = file.readlines()
 for i in range(0,len(line)):
     first = line[i]
@@ -34,11 +34,11 @@ for i in range(0,len(line)):
 
     if len(data) == 1:
 
-        trans ="{'data': "+ str(data[0]["data"])+"}"
-        res = "{'response': "+str(data[0]['response'])+"}"
+        trans ='{"data": '+ json.dumps(data[0]['data'])+"}"
+        res = '{"response": '+json.dumps(data[0]['response'])+"}"
     else:
-        trans = data[0]
-        res = data[1]
+        trans = json.dumps(data[0])
+        res = json.dumps(data[1])
 
 
     # with open("full_filtered_data.txt",'+a') as f:
